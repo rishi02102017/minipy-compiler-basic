@@ -147,7 +147,7 @@ You can make your compiler available **24x7 online** via Streamlit Cloud:
 
 ---
 
-## ## **Contributors**
+## **Contributors**
 - Jyotishman Das: Lead Developer and Project Contributor.
  **[Rishi02102017](https://github.com/rishi02102017)**  
 
