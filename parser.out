@@ -1,0 +1,829 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement_list statement
+Rule 3     statement_list -> statement
+Rule 4     statement -> assignment
+Rule 5     statement -> print_stmt
+Rule 6     statement -> if_stmt
+Rule 7     statement -> while_stmt
+Rule 8     assignment -> ID ASSIGN expression
+Rule 9     print_stmt -> PRINT LPAREN expression RPAREN
+Rule 10    if_stmt -> IF expression statement_list ELSE statement_list
+Rule 11    while_stmt -> WHILE expression statement_list
+Rule 12    expression -> expression PLUS expression
+Rule 13    expression -> expression MINUS expression
+Rule 14    expression -> expression MUL expression
+Rule 15    expression -> expression DIV expression
+Rule 16    expression -> expression LT expression
+Rule 17    expression -> NUMBER
+Rule 18    expression -> ID
+
+Terminals, with rules where they appear
+
+ASSIGN               : 8
+DIV                  : 15
+ELSE                 : 10
+ID                   : 8 18
+IF                   : 10
+LPAREN               : 9
+LT                   : 16
+MINUS                : 13
+MUL                  : 14
+NUMBER               : 17
+PLUS                 : 12
+PRINT                : 9
+RPAREN               : 9
+WHILE                : 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment           : 4
+expression           : 8 9 10 11 12 12 13 13 14 14 15 15 16 16
+if_stmt              : 6
+print_stmt           : 5
+program              : 0
+statement            : 2 3
+statement_list       : 1 2 10 10 11
+while_stmt           : 7
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    $end            reduce using rule 1 (program -> statement_list .)
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    statement                      shift and go to state 12
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 3
+
+    (3) statement_list -> statement .
+
+    ID              reduce using rule 3 (statement_list -> statement .)
+    PRINT           reduce using rule 3 (statement_list -> statement .)
+    IF              reduce using rule 3 (statement_list -> statement .)
+    WHILE           reduce using rule 3 (statement_list -> statement .)
+    $end            reduce using rule 3 (statement_list -> statement .)
+    ELSE            reduce using rule 3 (statement_list -> statement .)
+
+
+state 4
+
+    (4) statement -> assignment .
+
+    ID              reduce using rule 4 (statement -> assignment .)
+    PRINT           reduce using rule 4 (statement -> assignment .)
+    IF              reduce using rule 4 (statement -> assignment .)
+    WHILE           reduce using rule 4 (statement -> assignment .)
+    $end            reduce using rule 4 (statement -> assignment .)
+    ELSE            reduce using rule 4 (statement -> assignment .)
+
+
+state 5
+
+    (5) statement -> print_stmt .
+
+    ID              reduce using rule 5 (statement -> print_stmt .)
+    PRINT           reduce using rule 5 (statement -> print_stmt .)
+    IF              reduce using rule 5 (statement -> print_stmt .)
+    WHILE           reduce using rule 5 (statement -> print_stmt .)
+    $end            reduce using rule 5 (statement -> print_stmt .)
+    ELSE            reduce using rule 5 (statement -> print_stmt .)
+
+
+state 6
+
+    (6) statement -> if_stmt .
+
+    ID              reduce using rule 6 (statement -> if_stmt .)
+    PRINT           reduce using rule 6 (statement -> if_stmt .)
+    IF              reduce using rule 6 (statement -> if_stmt .)
+    WHILE           reduce using rule 6 (statement -> if_stmt .)
+    $end            reduce using rule 6 (statement -> if_stmt .)
+    ELSE            reduce using rule 6 (statement -> if_stmt .)
+
+
+state 7
+
+    (7) statement -> while_stmt .
+
+    ID              reduce using rule 7 (statement -> while_stmt .)
+    PRINT           reduce using rule 7 (statement -> while_stmt .)
+    IF              reduce using rule 7 (statement -> while_stmt .)
+    WHILE           reduce using rule 7 (statement -> while_stmt .)
+    $end            reduce using rule 7 (statement -> while_stmt .)
+    ELSE            reduce using rule 7 (statement -> while_stmt .)
+
+
+state 8
+
+    (8) assignment -> ID . ASSIGN expression
+
+    ASSIGN          shift and go to state 13
+
+
+state 9
+
+    (9) print_stmt -> PRINT . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 14
+
+
+state 10
+
+    (10) if_stmt -> IF . expression statement_list ELSE statement_list
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 15
+
+state 11
+
+    (11) while_stmt -> WHILE . expression statement_list
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 18
+
+state 12
+
+    (2) statement_list -> statement_list statement .
+
+    ID              reduce using rule 2 (statement_list -> statement_list statement .)
+    PRINT           reduce using rule 2 (statement_list -> statement_list statement .)
+    IF              reduce using rule 2 (statement_list -> statement_list statement .)
+    WHILE           reduce using rule 2 (statement_list -> statement_list statement .)
+    $end            reduce using rule 2 (statement_list -> statement_list statement .)
+    ELSE            reduce using rule 2 (statement_list -> statement_list statement .)
+
+
+state 13
+
+    (8) assignment -> ID ASSIGN . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 19
+
+state 14
+
+    (9) print_stmt -> PRINT LPAREN . expression RPAREN
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 20
+
+state 15
+
+    (10) if_stmt -> IF expression . statement_list ELSE statement_list
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    statement_list                 shift and go to state 21
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 16
+
+    (17) expression -> NUMBER .
+
+    PLUS            reduce using rule 17 (expression -> NUMBER .)
+    MINUS           reduce using rule 17 (expression -> NUMBER .)
+    MUL             reduce using rule 17 (expression -> NUMBER .)
+    DIV             reduce using rule 17 (expression -> NUMBER .)
+    LT              reduce using rule 17 (expression -> NUMBER .)
+    ID              reduce using rule 17 (expression -> NUMBER .)
+    PRINT           reduce using rule 17 (expression -> NUMBER .)
+    IF              reduce using rule 17 (expression -> NUMBER .)
+    WHILE           reduce using rule 17 (expression -> NUMBER .)
+    $end            reduce using rule 17 (expression -> NUMBER .)
+    ELSE            reduce using rule 17 (expression -> NUMBER .)
+    RPAREN          reduce using rule 17 (expression -> NUMBER .)
+
+
+state 17
+
+    (18) expression -> ID .
+
+    PLUS            reduce using rule 18 (expression -> ID .)
+    MINUS           reduce using rule 18 (expression -> ID .)
+    MUL             reduce using rule 18 (expression -> ID .)
+    DIV             reduce using rule 18 (expression -> ID .)
+    LT              reduce using rule 18 (expression -> ID .)
+    ID              reduce using rule 18 (expression -> ID .)
+    PRINT           reduce using rule 18 (expression -> ID .)
+    IF              reduce using rule 18 (expression -> ID .)
+    WHILE           reduce using rule 18 (expression -> ID .)
+    $end            reduce using rule 18 (expression -> ID .)
+    ELSE            reduce using rule 18 (expression -> ID .)
+    RPAREN          reduce using rule 18 (expression -> ID .)
+
+
+state 18
+
+    (11) while_stmt -> WHILE expression . statement_list
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    statement_list                 shift and go to state 27
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 19
+
+    (8) assignment -> ID ASSIGN expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+    ID              reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    PRINT           reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    IF              reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    WHILE           reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    $end            reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    ELSE            reduce using rule 8 (assignment -> ID ASSIGN expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+
+state 20
+
+    (9) print_stmt -> PRINT LPAREN expression . RPAREN
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+    RPAREN          shift and go to state 28
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+
+state 21
+
+    (10) if_stmt -> IF expression statement_list . ELSE statement_list
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    ELSE            shift and go to state 29
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    statement                      shift and go to state 12
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 22
+
+    (12) expression -> expression PLUS . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 30
+
+state 23
+
+    (13) expression -> expression MINUS . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 31
+
+state 24
+
+    (14) expression -> expression MUL . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 32
+
+state 25
+
+    (15) expression -> expression DIV . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 33
+
+state 26
+
+    (16) expression -> expression LT . expression
+    (12) expression -> . expression PLUS expression
+    (13) expression -> . expression MINUS expression
+    (14) expression -> . expression MUL expression
+    (15) expression -> . expression DIV expression
+    (16) expression -> . expression LT expression
+    (17) expression -> . NUMBER
+    (18) expression -> . ID
+
+    NUMBER          shift and go to state 16
+    ID              shift and go to state 17
+
+    expression                     shift and go to state 34
+
+state 27
+
+    (11) while_stmt -> WHILE expression statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+  ! shift/reduce conflict for ID resolved as shift
+  ! shift/reduce conflict for PRINT resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+    $end            reduce using rule 11 (while_stmt -> WHILE expression statement_list .)
+    ELSE            reduce using rule 11 (while_stmt -> WHILE expression statement_list .)
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+  ! ID              [ reduce using rule 11 (while_stmt -> WHILE expression statement_list .) ]
+  ! PRINT           [ reduce using rule 11 (while_stmt -> WHILE expression statement_list .) ]
+  ! IF              [ reduce using rule 11 (while_stmt -> WHILE expression statement_list .) ]
+  ! WHILE           [ reduce using rule 11 (while_stmt -> WHILE expression statement_list .) ]
+
+    statement                      shift and go to state 12
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 28
+
+    (9) print_stmt -> PRINT LPAREN expression RPAREN .
+
+    ID              reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+    PRINT           reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+    IF              reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+    WHILE           reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+    $end            reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+    ELSE            reduce using rule 9 (print_stmt -> PRINT LPAREN expression RPAREN .)
+
+
+state 29
+
+    (10) if_stmt -> IF expression statement_list ELSE . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+    statement_list                 shift and go to state 35
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+
+state 30
+
+    (12) expression -> expression PLUS expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for LT resolved as shift
+    ID              reduce using rule 12 (expression -> expression PLUS expression .)
+    PRINT           reduce using rule 12 (expression -> expression PLUS expression .)
+    IF              reduce using rule 12 (expression -> expression PLUS expression .)
+    WHILE           reduce using rule 12 (expression -> expression PLUS expression .)
+    $end            reduce using rule 12 (expression -> expression PLUS expression .)
+    ELSE            reduce using rule 12 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 12 (expression -> expression PLUS expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+  ! PLUS            [ reduce using rule 12 (expression -> expression PLUS expression .) ]
+  ! MINUS           [ reduce using rule 12 (expression -> expression PLUS expression .) ]
+  ! MUL             [ reduce using rule 12 (expression -> expression PLUS expression .) ]
+  ! DIV             [ reduce using rule 12 (expression -> expression PLUS expression .) ]
+  ! LT              [ reduce using rule 12 (expression -> expression PLUS expression .) ]
+
+
+state 31
+
+    (13) expression -> expression MINUS expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for LT resolved as shift
+    ID              reduce using rule 13 (expression -> expression MINUS expression .)
+    PRINT           reduce using rule 13 (expression -> expression MINUS expression .)
+    IF              reduce using rule 13 (expression -> expression MINUS expression .)
+    WHILE           reduce using rule 13 (expression -> expression MINUS expression .)
+    $end            reduce using rule 13 (expression -> expression MINUS expression .)
+    ELSE            reduce using rule 13 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 13 (expression -> expression MINUS expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+  ! PLUS            [ reduce using rule 13 (expression -> expression MINUS expression .) ]
+  ! MINUS           [ reduce using rule 13 (expression -> expression MINUS expression .) ]
+  ! MUL             [ reduce using rule 13 (expression -> expression MINUS expression .) ]
+  ! DIV             [ reduce using rule 13 (expression -> expression MINUS expression .) ]
+  ! LT              [ reduce using rule 13 (expression -> expression MINUS expression .) ]
+
+
+state 32
+
+    (14) expression -> expression MUL expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for LT resolved as shift
+    ID              reduce using rule 14 (expression -> expression MUL expression .)
+    PRINT           reduce using rule 14 (expression -> expression MUL expression .)
+    IF              reduce using rule 14 (expression -> expression MUL expression .)
+    WHILE           reduce using rule 14 (expression -> expression MUL expression .)
+    $end            reduce using rule 14 (expression -> expression MUL expression .)
+    ELSE            reduce using rule 14 (expression -> expression MUL expression .)
+    RPAREN          reduce using rule 14 (expression -> expression MUL expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+  ! PLUS            [ reduce using rule 14 (expression -> expression MUL expression .) ]
+  ! MINUS           [ reduce using rule 14 (expression -> expression MUL expression .) ]
+  ! MUL             [ reduce using rule 14 (expression -> expression MUL expression .) ]
+  ! DIV             [ reduce using rule 14 (expression -> expression MUL expression .) ]
+  ! LT              [ reduce using rule 14 (expression -> expression MUL expression .) ]
+
+
+state 33
+
+    (15) expression -> expression DIV expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for LT resolved as shift
+    ID              reduce using rule 15 (expression -> expression DIV expression .)
+    PRINT           reduce using rule 15 (expression -> expression DIV expression .)
+    IF              reduce using rule 15 (expression -> expression DIV expression .)
+    WHILE           reduce using rule 15 (expression -> expression DIV expression .)
+    $end            reduce using rule 15 (expression -> expression DIV expression .)
+    ELSE            reduce using rule 15 (expression -> expression DIV expression .)
+    RPAREN          reduce using rule 15 (expression -> expression DIV expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+  ! PLUS            [ reduce using rule 15 (expression -> expression DIV expression .) ]
+  ! MINUS           [ reduce using rule 15 (expression -> expression DIV expression .) ]
+  ! MUL             [ reduce using rule 15 (expression -> expression DIV expression .) ]
+  ! DIV             [ reduce using rule 15 (expression -> expression DIV expression .) ]
+  ! LT              [ reduce using rule 15 (expression -> expression DIV expression .) ]
+
+
+state 34
+
+    (16) expression -> expression LT expression .
+    (12) expression -> expression . PLUS expression
+    (13) expression -> expression . MINUS expression
+    (14) expression -> expression . MUL expression
+    (15) expression -> expression . DIV expression
+    (16) expression -> expression . LT expression
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for LT resolved as shift
+    ID              reduce using rule 16 (expression -> expression LT expression .)
+    PRINT           reduce using rule 16 (expression -> expression LT expression .)
+    IF              reduce using rule 16 (expression -> expression LT expression .)
+    WHILE           reduce using rule 16 (expression -> expression LT expression .)
+    $end            reduce using rule 16 (expression -> expression LT expression .)
+    ELSE            reduce using rule 16 (expression -> expression LT expression .)
+    RPAREN          reduce using rule 16 (expression -> expression LT expression .)
+    PLUS            shift and go to state 22
+    MINUS           shift and go to state 23
+    MUL             shift and go to state 24
+    DIV             shift and go to state 25
+    LT              shift and go to state 26
+
+  ! PLUS            [ reduce using rule 16 (expression -> expression LT expression .) ]
+  ! MINUS           [ reduce using rule 16 (expression -> expression LT expression .) ]
+  ! MUL             [ reduce using rule 16 (expression -> expression LT expression .) ]
+  ! DIV             [ reduce using rule 16 (expression -> expression LT expression .) ]
+  ! LT              [ reduce using rule 16 (expression -> expression LT expression .) ]
+
+
+state 35
+
+    (10) if_stmt -> IF expression statement_list ELSE statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . print_stmt
+    (6) statement -> . if_stmt
+    (7) statement -> . while_stmt
+    (8) assignment -> . ID ASSIGN expression
+    (9) print_stmt -> . PRINT LPAREN expression RPAREN
+    (10) if_stmt -> . IF expression statement_list ELSE statement_list
+    (11) while_stmt -> . WHILE expression statement_list
+
+  ! shift/reduce conflict for ID resolved as shift
+  ! shift/reduce conflict for PRINT resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+    $end            reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .)
+    ELSE            reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .)
+    ID              shift and go to state 8
+    PRINT           shift and go to state 9
+    IF              shift and go to state 10
+    WHILE           shift and go to state 11
+
+  ! ID              [ reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .) ]
+  ! PRINT           [ reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .) ]
+  ! IF              [ reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .) ]
+  ! WHILE           [ reduce using rule 10 (if_stmt -> IF expression statement_list ELSE statement_list .) ]
+
+    statement                      shift and go to state 12
+    assignment                     shift and go to state 4
+    print_stmt                     shift and go to state 5
+    if_stmt                        shift and go to state 6
+    while_stmt                     shift and go to state 7
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for ID in state 27 resolved as shift
+WARNING: shift/reduce conflict for PRINT in state 27 resolved as shift
+WARNING: shift/reduce conflict for IF in state 27 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 27 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 30 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 30 resolved as shift
+WARNING: shift/reduce conflict for MUL in state 30 resolved as shift
+WARNING: shift/reduce conflict for DIV in state 30 resolved as shift
+WARNING: shift/reduce conflict for LT in state 30 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 31 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 31 resolved as shift
+WARNING: shift/reduce conflict for MUL in state 31 resolved as shift
+WARNING: shift/reduce conflict for DIV in state 31 resolved as shift
+WARNING: shift/reduce conflict for LT in state 31 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 32 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 32 resolved as shift
+WARNING: shift/reduce conflict for MUL in state 32 resolved as shift
+WARNING: shift/reduce conflict for DIV in state 32 resolved as shift
+WARNING: shift/reduce conflict for LT in state 32 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 33 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 33 resolved as shift
+WARNING: shift/reduce conflict for MUL in state 33 resolved as shift
+WARNING: shift/reduce conflict for DIV in state 33 resolved as shift
+WARNING: shift/reduce conflict for LT in state 33 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 34 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 34 resolved as shift
+WARNING: shift/reduce conflict for MUL in state 34 resolved as shift
+WARNING: shift/reduce conflict for DIV in state 34 resolved as shift
+WARNING: shift/reduce conflict for LT in state 34 resolved as shift
+WARNING: shift/reduce conflict for ID in state 35 resolved as shift
+WARNING: shift/reduce conflict for PRINT in state 35 resolved as shift
+WARNING: shift/reduce conflict for IF in state 35 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 35 resolved as shift
