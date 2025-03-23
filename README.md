@@ -149,7 +149,7 @@ You can make your compiler available **24x7 online** via Streamlit Cloud:
 
 ## 🌍 Live App
 🔗 Try the Compiler Online:
-👉 https://minipy-compiler-basic-p27kf94aufk7borxcp5dg3.streamlit.app/
+ https://minipy-compiler-basic-p27kf94aufk7borxcp5dg3.streamlit.app/
 
 - No setup required. Paste MiniPy code, generate bytecode, run it live. Powered by Streamlit Cloud 🚀
 
