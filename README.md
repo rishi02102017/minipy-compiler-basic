@@ -1,6 +1,6 @@
 # MiniPy Compiler - Basic Edition
 
-An educational toy compiler for a Python-like language called **MiniPy**, built for hackathons and compiler learning!
+A compiler for a Python-like language called **MiniPy**, built for hackathons and compiler learning!
 
 🚀 This project tokenizes, parses, and compiles MiniPy code into **bytecode**, and executes it with a custom **stack-based virtual machine** — all through a clean **Streamlit UI**.
 
@@ -114,7 +114,7 @@ streamlit run app.py
 
 You can make your compiler available **24x7 online** via Streamlit Cloud:
 
-1. Push this code to a public GitHub repo (**✅ already done**)
+1. Push this code to a public GitHub repo
 2. Visit 👉 [https://streamlit.io/cloud](https://streamlit.io/cloud)
 3. Click **“New app”**
 4. Select your repo: `rishi02102017/minipy-compiler-basic`
@@ -127,7 +127,7 @@ You can make your compiler available **24x7 online** via Streamlit Cloud:
 
 ---
 
-## ✅ Tech Stack
+##  Tech Stack
 
 - **Python 3.10+**
 - **PLY** – Lex/Yacc for Python
@@ -147,9 +147,9 @@ You can make your compiler available **24x7 online** via Streamlit Cloud:
 
 ---
 
-## 🙌 Credits
-
-Built with 💡 by **[Rishi02102017](https://github.com/rishi02102017)**  
+## ## **Contributors**
+- Jyotishman Das: Lead Developer and Project Contributor.
+ **[Rishi02102017](https://github.com/rishi02102017)**  
 
 ---
 
