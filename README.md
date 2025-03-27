@@ -1,7 +1,7 @@
 # MiniPy Compiler - Basic Edition
 
 A compiler for a Python-like language called **MiniPy**, built for hackathons and compiler learning!
-
+---
 🚀 This project tokenizes, parses, and compiles MiniPy code into **bytecode**, and executes it with a custom **stack-based virtual machine** — all through a clean **Streamlit UI**.
 
 ---
